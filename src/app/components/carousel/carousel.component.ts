@@ -1,5 +1,6 @@
 import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/ng-bootstrap';
+import { ImageService } from 'src/app/services/image.service';
 
 
 @Component({
@@ -9,23 +10,23 @@ import { NgbCarousel, NgbSlideEvent, NgbSlideEventSource } from '@ng-bootstrap/n
 })
 export class CarouselComponent implements OnInit {
   private _images!: any
-  @Input() 
-  set images(images: any[]){
+  @Input()
+  set images(images: any[]) {
     console.log(images)
-    this._images = images.map(p=> `http://localhost:3000/api/images/${p.filename}`)
+    this._images = images.map(p => `${this._imageService.apiURL}/${p.filename}`)
   }
-  get images(){
+  get images() {
     return this._images
   }
-  constructor() { }
+  constructor( private _imageService: ImageService ) { }
 
-paused = false;
+  paused = false;
   unpauseOnArrow = false;
   pauseOnIndicator = false;
   pauseOnHover = true;
   pauseOnFocus = true;
 
-  @ViewChild('carousel', {static : true}) carousel!: NgbCarousel;
+  @ViewChild('carousel', { static: true }) carousel!: NgbCarousel;
 
   togglePaused() {
     if (this.paused) {

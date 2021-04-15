@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { ImageService } from 'src/app/services/image.service';
 
 @Component({
   selector: 'app-images-list',
@@ -12,14 +13,14 @@ export class ImagesListComponent implements OnInit {
   @Input()
   set images(images: any[]) {
     this._imageLinks = images.map(p => {
-      return { link: `http://localhost:3000/api/images/${p.filename}`, uploadDate: p.uploadDate, type: p.contentType }
+      return { link: `${this.imageService.apiURL}/${p.filename}`, uploadDate: p.uploadDate, type: p.contentType }
     })
   }
   get images() {
     return this._imageLinks
   }
 
-  constructor() { }
+  constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
   }

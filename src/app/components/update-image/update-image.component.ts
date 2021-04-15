@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { ImageService } from 'src/app/services/image.service';
+import { ImageService } from './../../services/image.service';
 
 
 @Component({
