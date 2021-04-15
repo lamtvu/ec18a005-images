@@ -1,0 +1,17 @@
+<div class="card w-50" style="z-index: 17;position: fixed; left: 50%; transform: translateX(-50%); opacity: 1; top: 100px;">
+  <div class="card-header text-white" style="text-align: center; background-color: gainsboro;">
+    <p class="text-dark font-weight-bold" style="font-size: 20px;">Upload Images</p>
+  </div>
+  <div class="card-body">
+    <div class="form-group d-flex" style="justify-content: center;">
+      <input type="file" class="form-control-file" name="" id="" placeholder="" aria-describedby="fileHelpId" (change)="onSelectFile($event)">
+    </div>
+  <span class="badge badge-danger" *ngIf="error">invalue type file</span>
+  </div>
+  <div class="card-footer d-flex" style="justify-content: center;">
+    <div class="btn-group">
+      <button class="btn btn-info" (click)="onUpload()">upload</button>
+      <button class="btn btn-danger" (click)="onCancel()">cancel</button>
+    </div>
+  </div>
+</div>

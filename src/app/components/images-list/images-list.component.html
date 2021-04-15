@@ -1,0 +1,15 @@
+<p style="font-size: 20px; font-weight: bold;">Image List</p>
+<ng-container *ngFor="let image of images">
+    <div class="card mt-2" >
+        <div class="card">
+            <div class="card-body d-flex">
+                <img class="card-img-bottom" [src]="image.link" alt="" style="width: 25%; height: 100px;">
+                <div class="w-75 p-3 text-dark">
+                    <p class="card-text"> <strong> Upload date: </strong>{{ image.uploadDate | date:"dd-MM-yyyy  HH:mm"}}
+                    </p>
+                    <p class="card-text"> <strong> Type: </strong> {{ image.type}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-container>
