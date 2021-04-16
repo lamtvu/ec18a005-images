@@ -9,7 +9,7 @@ export class ImageService {
 
   constructor(private _httpClinet: HttpClient) { }
 
-  public apiURL: string = 'https://ec18a080-images.herokuapp.com/api/images'
+  public apiURL: string = 'https://ec18a00a-images.herokuapp.com/api/images'
   // public apiURL: string = 'http://localhost:8080/api/images'
 
   getAll(): Observable<any> {
