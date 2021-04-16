@@ -13,7 +13,7 @@ export class ImagesListComponent implements OnInit {
   @Input()
   set images(images: any[]) {
     this._imageLinks = images.map(p => {
-      return { link: `${this.imageService.apiURL}/${p.filename}`, uploadDate: p.uploadDate, type: p.contentType }
+      return { link: `${this.imageService.apiURL}/${p.file._id}`,file: p.file, title: p.title, poster: p.poster }
     })
   }
   get images() {

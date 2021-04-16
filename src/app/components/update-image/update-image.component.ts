@@ -19,7 +19,8 @@ export class UpdateImageComponent implements OnInit, OnDestroy {
   private subcription!: Subscription
   private selectedFile!: File
   public error: boolean = false
-
+  public poster: string = ''
+  public title: string = ''
 
   onCancel() {
     this.evenEmitter.emit('cancel')
@@ -39,6 +40,8 @@ export class UpdateImageComponent implements OnInit, OnDestroy {
     if (this.error == true) return;
     let fd: FormData = new FormData()
     fd.append('file_upload', this.selectedFile!, this.selectedFile?.name)
+    fd.append('title',this.title)
+    fd.append('poster',this.poster)
     this.subcription = this._imageService.addImage(fd).subscribe(data => {
       this.evenEmitter2.emit(data)
     })

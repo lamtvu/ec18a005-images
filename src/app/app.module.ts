@@ -9,7 +9,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import {NgbAlertModule} from '@ng-bootstrap/ng-bootstrap';
 import { UpdateImageComponent } from './components/update-image/update-image.component';
 import { ImagesListComponent } from './components/images-list/images-list.component';
-
+import { FormsModule } from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -23,7 +23,7 @@ import { ImagesListComponent } from './components/images-list/images-list.compon
     HttpClientModule,
     AppRoutingModule,
     NgbAlertModule,
-
+    FormsModule,
     NgbModule
   ],
   providers: [],

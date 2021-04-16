@@ -13,7 +13,7 @@ export class CarouselComponent implements OnInit {
   @Input()
   set images(images: any[]) {
     console.log(images)
-    this._images = images.map(p => `${this._imageService.apiURL}/${p.filename}`)
+    this._images = images.map(p => { return {link:`${this._imageService.apiURL}/${p.file._id}`,title: p.title}})
   }
   get images() {
     return this._images
